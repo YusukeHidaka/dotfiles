@@ -1,0 +1,14 @@
+# ~/.tmuxinator/conf.yml
+
+name: conf
+root: ~/confRoom-1
+
+windows:
+  - main:
+      layout: tiles
+      panes:
+        - rails s -p 3003
+        - git status
+  - editor: vim
+  - rails: rails s -b 0.0.0.0
+  - db: pg_ctl -D /usr/local/var/postgres9.5 -l logfile start

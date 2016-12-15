@@ -1,0 +1,24 @@
+# ~/.tmuxinator/temona.yml
+
+name: temona
+root: ~/UKOKKEI/ukokkei_frontend
+
+pre:
+ -  pg_ctl -D /usr/local/var/postgres9.5 -l logfile start
+
+windows:
+  - main:
+      layout:  tiles
+      panes:
+        - npm run watch
+        - ngrok http 3000
+        - git status
+  - editor:
+      - cd ~/UKOKKEI/ukokkei_frontend
+      - vim
+  - rails:
+      -  cd ~/UKOKKEI/ukokkei_dummy
+      -  rails s -b 0.0.0.0
+  - elastic:
+      -  cd ~/elasticsearch-2.3.2
+      -  ./bin/elasticsearch

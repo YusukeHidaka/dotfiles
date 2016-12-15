@@ -1,0 +1,8 @@
+export PATH="$HOME/.rbenv/zsh:$PATH"
+export PATH="$HOME/.rbenv/zsh:$PATH"
+
+#
+# Editors
+#
+
+export EDITOR='vim'
